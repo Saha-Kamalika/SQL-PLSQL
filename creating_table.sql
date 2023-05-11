@@ -9,6 +9,6 @@ CREATE TABLE student1(
 /*ALTER TABLE student1 DROP COLUMN gpa;*/
 INSERT INTO student1 VALUES(1, 'Kamalika', 'ECE');
 INSERT INTO student1 VALUES(2, 'Srijit', 'ECE');
-INSERT INTO student1(student_id, student_name) VALUES(3, 'Akashdeep');
+INSERT INTO student1(student_id, student_name) VALUES(3, 'Funny');
 INSERT INTO student1 VALUES(4, 'Rumi','EEE');
 SELECT * FROM student1;
