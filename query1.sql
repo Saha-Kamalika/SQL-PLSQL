@@ -52,3 +52,19 @@ DROP PRIMARY KEY;   -- removing PK
 ALTER TABLE myTabul
 ADD CONSTRAINT myPK PRIMARY KEY(id, city);   -- adding a composite key
 
+-- foreign keys
+CREATE TABLE myOrders(
+	orderID INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20),
+    ID INT,
+    FOREIGN KEY (ID) REFERENCES myTabul(id));
+    
+SELECT * FROM myOrders;
+
+INSERT INTO myOrders(name,ID) VALUES ("AMI", 3),("SRIJIT",2),("KAMAL",1);
+
+ALTER TABLE myOrders
+ADD CONSTRAINT myFK FOREIGN KEY (ID) REFERENCES myTabul(id);
+
+ALTER TABLE myOrders
+DROP FOREIGN KEY myFK;
