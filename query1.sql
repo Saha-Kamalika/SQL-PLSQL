@@ -68,3 +68,26 @@ ADD CONSTRAINT myFK FOREIGN KEY (ID) REFERENCES myTabul(id);
 
 ALTER TABLE myOrders
 DROP FOREIGN KEY myFK;
+
+
+-- check constraint
+ALTER TABLE myTabul
+ADD age INT;
+
+ALTER TABLE myTabul
+ADD CHECK (age>=18);
+SELECT * FROM myTabul;
+INSERT INTO myTabul(age) VALUES (44), (17), (20);
+
+-- views
+CREATE VIEW myview1 AS
+SELECT id,name 
+FROM myTabul;
+
+SELECT * FROM myview1;
+
+CREATE OR REPLACE VIEW myview1 AS
+SELECT id,name,city
+FROM myTabul;
+
+DROP VIEW myview1;
