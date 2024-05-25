@@ -4,7 +4,7 @@ CREATE OR REPLACE PROCEDURE insert_employee (
     p_last_name   IN employees.last_name%TYPE,
     p_hire_date   IN employees.hire_date%TYPE
 ) IS 
-BEGIN
+BEGIN 
     INSERT INTO employees (employee_id, first_name, last_name, hire_date)
     VALUES (p_employee_id, p_first_name, p_last_name, p_hire_date);
     
