@@ -61,3 +61,13 @@ UNION
 SELECT employee.name, orders.product FROM employee
 RIGHT JOIN orders
 ON employee.id=orders.order_id;
+
+/*xplore*/
+SELECT DISTINCT I.Item_Name
+FROM Items I
+WHERE I.Item_Id NOT IN (
+    SELECT I.Item_Id
+    FROM Items I
+    INNER JOIN Orders O
+    ON I.Item_Id=O.Item_Id
+);
